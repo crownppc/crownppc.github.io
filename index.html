@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrownPPC — AI Amazon Advertising Optimization</title>
+<style>
+  :root{
+    --navy:#0e2a3d;
+    --navy-deep:#0a1f2e;
+    --paper:#ffffff;
+    --cream:#f7f5f0;
+    --gold:#b8863b;
+    --line:#e2ddd2;
+    --muted:#5c6b74;
+    --ink:#1b2b33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Georgia','Times New Roman',serif;
+    line-height:1.65;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+  .sans{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;}
+
+  header{
+    background:var(--navy-deep);
+    color:var(--paper);
+    padding:22px 0;
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  .brand{font-size:1.3rem;letter-spacing:0.01em;}
+  .brand span{color:var(--gold);}
+  nav a{
+    color:#c7d2d8;
+    text-decoration:none;
+    margin-left:22px;
+    font-size:0.82rem;
+    letter-spacing:0.04em;
+  }
+  nav a:hover{color:var(--gold);}
+  nav{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;}
+
+  .hero{
+    background:var(--navy);
+    color:var(--paper);
+    padding:64px 0 56px;
+  }
+  .eyebrow{
+    font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    color:var(--gold);
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  h1{
+    font-weight:normal;
+    font-size:2.3rem;
+    line-height:1.3;
+    max-width:640px;
+    margin-bottom:18px;
+  }
+  .hero p{
+    color:#c7d2d8;
+    max-width:540px;
+    font-size:1.02rem;
+    font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+
+  section{padding:52px 0;border-bottom:1px solid var(--line);}
+  .section-head{
+    font-size:1.5rem;
+    margin-bottom:8px;
+    color:var(--navy);
+  }
+  .section-sub{
+    font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    color:var(--muted);
+    font-size:0.92rem;
+    margin-bottom:30px;
+  }
+
+  /* Credibility band */
+  .credibility{background:var(--cream);}
+  .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+  .cred-copy p{margin-bottom:14px;font-size:0.98rem;}
+  .cred-copy strong{color:var(--navy);}
+  .stat-list{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;}
+  .stat{
+    padding:16px 0;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+  }
+  .stat:last-child{border-bottom:1px solid var(--line);}
+  .stat-num{font-family:Georgia,serif;font-size:1.3rem;color:var(--navy);}
+  .stat-lbl{color:var(--muted);font-size:0.85rem;text-align:right;}
+
+  /* Sample output card */
+  .sample-label{
+    font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    display:inline-block;
+    background:var(--gold);
+    color:#fff;
+    font-size:0.7rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:2px;
+    margin-bottom:18px;
+  }
+  .card{
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  .card-head{
+    background:var(--navy-deep);
+    color:#fff;
+    padding:14px 20px;
+    font-size:0.85rem;
+    display:flex;
+    justify-content:space-between;
+  }
+  .card-row{
+    padding:16px 20px;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1.6fr;
+    gap:12px;
+    font-size:0.85rem;
+    align-items:center;
+  }
+  .card-row.head-row{
+    background:#fafaf8;
+    color:var(--muted);
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .flag{color:#b8863b;font-weight:bold;}
+  .flag.high{color:#b3452c;}
+  .note{color:var(--muted);font-size:0.8rem;padding:14px 20px;border-top:1px solid var(--line);}
+
+  /* Duties */
+  .duties{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);}
+  .duty{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .duty:nth-child(2n){border-right:none;}
+  .duty-title{font-size:1.02rem;color:var(--navy);margin-bottom:6px;}
+  .duty-desc{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--muted);font-size:0.86rem;}
+
+  footer{padding:44px 0;background:var(--navy-deep);color:#fff;}
+  .contact-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;}
+  .contact-block .lbl{color:var(--gold);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+  .contact-block a{color:#fff;text-decoration:none;border-bottom:1px solid #3a5568;}
+  .fine{color:#8fa2ac;font-size:0.78rem;margin-top:26px;font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;}
+
+  @media (max-width:640px){
+    h1{font-size:1.8rem;}
+    .cred-grid{grid-template-columns:1fr;}
+    .duties{grid-template-columns:1fr;}
+    .duty{border-right:none;}
+    .card-row{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Crown<span>PPC</span></div>
+    <nav>
+      <a href="#credibility">About</a>
+      <a href="#sample">Sample insight</a>
+      <a href="#product">What it does</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">AI-Powered Amazon Advertising</div>
+    <h1>Amazon ad management built by a seller, not a marketing agency guessing at your business.</h1>
+    <p>CrownPPC reviews your campaign data daily and flags wasted spend, bid issues, and budget pacing problems — every recommendation benchmarked against your own account history, not invented industry averages.</p>
+  </div>
+</section>
+
+<section class="credibility" id="credibility">
+  <div class="wrap">
+    <div class="section-head">Why sellers trust this</div>
+    <div class="section-sub">Built from the inside, not sold from the outside.</div>
+    <div class="cred-grid">
+      <div class="cred-copy">
+        <p><strong>Six years running Amazon accounts, not just studying them.</strong> Before this was a tool, it was a spreadsheet I built to manage my own ad spend — because most PPC advice online doesn't hold up against a real account's numbers.</p>
+        <p><strong>Every rule is sourced from your account, not a benchmark library.</strong> No made-up "industry average ACOS" — recommendations are built entirely from your campaign's own conversion and spend history.</p>
+        <p><strong>You approve every change.</strong> This isn't a black box that touches your account automatically. You see the recommendation, the reasoning, and the number behind it — then you decide.</p>
+      </div>
+      <div class="stat-list">
+        <div class="stat"><span class="stat-num">6 yrs</span><span class="stat-lbl">Hands-on Amazon selling experience</span></div>
+        <div class="stat"><span class="stat-num">6</span><span class="stat-lbl">Core account duties monitored</span></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-lbl">Recommendations traceable to your own data</span></div>
+        <div class="stat"><span class="stat-num">0</span><span class="stat-lbl">Auto-changes made without your approval</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sample">
+  <div class="wrap">
+    <div class="section-head">See it in action</div>
+    <div class="section-sub">A real example of the kind of recommendation the system produces.</div>
+    <span class="sample-label">Sample output — illustrative data</span>
+    <div class="card">
+      <div class="card-head">
+        <span>Weekly account review</span>
+        <span>Duty: Wasted Spend Detection</span>
+      </div>
+      <div class="card-row head-row">
+        <div>Search term / ASIN</div>
+        <div>Spend (7d)</div>
+        <div>Orders</div>
+        <div>Recommendation</div>
+      </div>
+      <div class="card-row">
+        <div>"cat bowl set"</div>
+        <div>$86.40</div>
+        <div>0</div>
+        <div class="flag high">Negative match — no conversions in 45 days</div>
+      </div>
+      <div class="card-row">
+        <div>"ceramic pet feeder"</div>
+        <div>$41.10</div>
+        <div>6</div>
+        <div class="flag">Raise bid 12% — above target ACOS with room to scale</div>
+      </div>
+      <div class="card-row">
+        <div>Campaign: Auto – Core</div>
+        <div>$212.00</div>
+        <div>14</div>
+        <div>Pacing normally — no action needed</div>
+      </div>
+      <div class="note">Every recommendation links back to the exact spend, order, and ACOS figures it was calculated from — nothing here is a generic rule of thumb.</div>
+    </div>
+  </div>
+</section>
+
+<section id="product">
+  <div class="wrap">
+    <div class="section-head">What it monitors</div>
+    <div class="section-sub">Six duties, running quietly in the background of your account.</div>
+    <div class="duties">
+      <div class="duty"><div class="duty-title">Wasted spend detection</div><div class="duty-desc">Surfaces search terms and placements burning budget with no return.</div></div>
+      <div class="duty"><div class="duty-title">Target ACOS management</div><div class="duty-desc">Keeps campaigns aligned to the profitability targets you set.</div></div>
+      <div class="duty"><div class="duty-title">Bid configuration</div><div class="duty-desc">Recommends bid changes based on real placement and conversion data.</div></div>
+      <div class="duty"><div class="duty-title">Budget pacing</div><div class="duty-desc">Flags campaigns pacing to over- or under-spend before the day ends.</div></div>
+      <div class="duty"><div class="duty-title">Manual campaign promotion</div><div class="duty-desc">Identifies proven search terms ready to graduate to manual campaigns.</div></div>
+      <div class="duty"><div class="duty-title">TACOS trend tracking</div><div class="duty-desc">Watches total ad cost of sale so spend stays tied to business health.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-row">
+      <div class="contact-block">
+        <div class="lbl">Company</div>
+        <div>CrownPPC — Dubai-based, built by an Amazon seller for Amazon sellers.</div>
+      </div>
+      <div class="contact-block">
+        <div class="lbl">Contact</div>
+        <a href="mailto:aroosa.amazonuae@gmail.com">aroosa.amazonuae@gmail.com</a>
+      </div>
+    </div>
+    <div class="fine">© 2026 CrownPPC. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
