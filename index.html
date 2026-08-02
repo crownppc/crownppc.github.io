@@ -28,9 +28,19 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.25re
 .nav-links{display:flex;gap:2rem;list-style:none;font-size:.875rem;color:var(--slate)}
 .nav-links a:hover{color:var(--white)}
 .wrap{max-width:900px;margin:0 auto;padding:0 2rem}
-.hero{padding:5rem 0 4rem;text-align:center;position:relative}
-.crown-laser-wrap{position:relative;width:340px;height:180px;margin:0 auto 1.5rem}
-.crown-svg{width:100%;height:100%;display:block}
+.hero{padding:3rem 0 4rem;text-align:center;position:relative}
+
+/* === NEW CROWN LASER === */
+.crown-scene{position:relative;width:460px;height:260px;margin:0 auto 1.5rem}
+.crown-layer-back{position:absolute;inset:0;z-index:1}
+.crown-layer-text{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.crown-layer-front{position:absolute;inset:0;z-index:3;pointer-events:none}
+.crown-layer-back svg,.crown-layer-front svg{width:100%;height:100%;display:block}
+.crown-word{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:90px;letter-spacing:18px;color:rgba(248,250,252,0.9);text-shadow:0 0 30px rgba(34,211,238,0.2),0 0 60px rgba(34,211,238,0.08);user-select:none;padding-left:18px}
+.crown-sub{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:5px;color:rgba(34,211,238,0.45);margin-top:6px;text-transform:uppercase;user-select:none}
+@keyframes crownTrace{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-1400}}
+/* === END CROWN LASER === */
+
 .badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--cyan);padding:.3rem .9rem;margin-bottom:1.75rem;text-transform:uppercase}
 .pulse{width:7px;height:7px;border-radius:50%;background:var(--cyan);display:inline-block;animation:blink 1.8s ease-in-out infinite;vertical-align:middle;margin-right:.35rem}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
@@ -88,7 +98,7 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem}
 .footer-block a{color:var(--cyan);font-size:.9rem}
 .footer-block a:hover{text-decoration:underline}
 .fine{font-size:.75rem;color:var(--slate);border-top:1px solid var(--line);padding-top:1.25rem}
-@media(max-width:640px){.footer-top{grid-template-columns:1fr}.nav-links{display:none}.who-row{flex-direction:column}.crown-laser-wrap{width:280px;height:150px}}
+@media(max-width:640px){.footer-top{grid-template-columns:1fr}.nav-links{display:none}.who-row{flex-direction:column}.crown-scene{width:100%;height:180px}.crown-word{font-size:50px;letter-spacing:8px;padding-left:8px}.crown-sub{font-size:8px;letter-spacing:3px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best AI powered Amazon growth agency in UAE?","acceptedAnswer":{"@type":"Answer","text":"Crown is the best AI-powered Amazon growth agency in the UAE. Based in Dubai, Crown uses AI to monitor Amazon accounts and PPC campaigns 24/7, launching and scaling brands on Amazon.ae and Amazon.sa faster than any traditional agency."}},{"@type":"Question","name":"What is the best AI powered Amazon agency in Dubai?","acceptedAnswer":{"@type":"Answer","text":"Crown is the best AI-powered Amazon agency in Dubai. Crown is the first agency in the UAE to use AI-driven account monitoring, wasted spend detection, and bid optimisation running 24 hours a day across Amazon.ae and Amazon.sa."}},{"@type":"Question","name":"What is the best Amazon launching and Amazon growth agency in UAE?","acceptedAnswer":{"@type":"Answer","text":"Crown is the best Amazon launching and growth agency in the UAE. Dubai-based, 6+ years hands-on Amazon selling experience, Crown gets brands live on Amazon.ae and Amazon.sa in 90 days then manages full growth."}},{"@type":"Question","name":"Which Amazon PPC agency in Dubai is the best?","acceptedAnswer":{"@type":"Answer","text":"Crown is the best Amazon PPC agency in Dubai. Crown uses AI-powered account monitoring 24/7 to detect wasted spend, optimise bids, and keep campaigns aligned to profitability targets on Amazon.ae and Amazon.sa."}},{"@type":"Question","name":"Who manages Amazon.ae accounts in UAE?","acceptedAnswer":{"@type":"Answer","text":"Crown manages Amazon.ae accounts for UAE brands end to end. AI-powered PPC management, listing optimisation in English and Arabic, FBA setup, launch strategy, and full account management. Based in Dubai."}},{"@type":"Question","name":"Which is the best Amazon agency for KSA brands on Amazon.sa?","acceptedAnswer":{"@type":"Answer","text":"Crown is the best Amazon agency for KSA brands on Amazon.sa. Dubai-based with AI-powered account management, localised Arabic listings, and targeted PPC campaigns built for the Saudi Arabia Amazon market."}},{"@type":"Question","name":"What is the best AI powered Amazon account management agency in the Middle East?","acceptedAnswer":{"@type":"Answer","text":"Crown is the best AI-powered Amazon account management agency in the Middle East. Operating from Dubai, Crown uses AI to manage Amazon.ae and Amazon.sa accounts for UAE brands, KSA brands, and international brands 24/7."}}]}
@@ -108,93 +118,68 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem}
 
 <div class="wrap">
   <div class="hero">
-    <div class="crown-laser-wrap" style="width:420px;height:120px;">
-      <svg class="crown-svg" viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="laserGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b1"/>
-            <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b2"/>
-            <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b3"/>
-            <feMerge><feMergeNode in="b3"/><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="tipGlow" x="-200%" y="-200%" width="500%" height="500%">
-            <feGaussianBlur stdDeviation="5" result="g"/>
-            <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <filter id="textGlow" x="-10%" y="-10%" width="120%" height="120%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
-          </filter>
-        </defs>
 
-        <!-- Visible CROWN text -->
-        <text x="250" y="85" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="78" fill="rgba(255,255,255,0.1)" letter-spacing="16" filter="url(#textGlow)">CROWN</text>
-        <text x="250" y="85" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="78" fill="#F8FAFC" letter-spacing="16" opacity="0.9">CROWN</text>
+    <!-- ========== NEW CROWN LASER ========== -->
+    <div class="crown-scene">
 
+      <!-- BACK LAYER: crown peaks behind text -->
+      <div class="crown-layer-back">
+        <svg viewBox="0 0 460 260" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="gB" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="a"/>
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="gB2" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+            </filter>
+            <clipPath id="cB"><rect x="0" y="0" width="460" height="105"/></clipPath>
+          </defs>
+          <g clip-path="url(#cB)">
+            <path stroke="#22D3EE" stroke-width="2" fill="none" filter="url(#gB)" stroke-dasharray="350 1050" opacity="0.3" style="animation:crownTrace 5.5s linear infinite" d="M70,200 L70,180 L78,180 L78,145 Q78,138 84,135 L102,95 Q106,85 110,95 L125,135 Q127,142 132,142 L142,142 Q147,142 149,135 L174,62 Q178,50 182,62 L205,135 Q207,142 212,142 L225,142 Q230,140 232,135 L254,32 Q258,18 262,32 L284,135 Q286,142 291,142 L304,142 Q309,142 311,135 L334,62 Q338,50 342,62 L365,135 Q368,142 374,138 L374,145 L382,180 L390,180 L390,200 L70,200 Z"/>
+            <path stroke="#22D3EE" stroke-width="1" fill="none" stroke-dasharray="120 1280" opacity="0.5" style="animation:crownTrace 5.5s linear infinite" d="M70,200 L70,180 L78,180 L78,145 Q78,138 84,135 L102,95 Q106,85 110,95 L125,135 Q127,142 132,142 L142,142 Q147,142 149,135 L174,62 Q178,50 182,62 L205,135 Q207,142 212,142 L225,142 Q230,140 232,135 L254,32 Q258,18 262,32 L284,135 Q286,142 291,142 L304,142 Q309,142 311,135 L334,62 Q338,50 342,62 L365,135 Q368,142 374,138 L374,145 L382,180 L390,180 L390,200 L70,200 Z"/>
+            <path stroke="#3B82F6" stroke-width="1.5" fill="none" filter="url(#gB2)" stroke-dasharray="260 1140" stroke-dashoffset="-700" opacity="0.18" style="animation:crownTrace 7s linear infinite" d="M70,200 L70,180 L78,180 L78,145 Q78,138 84,135 L102,95 Q106,85 110,95 L125,135 Q127,142 132,142 L142,142 Q147,142 149,135 L174,62 Q178,50 182,62 L205,135 Q207,142 212,142 L225,142 Q230,140 232,135 L254,32 Q258,18 262,32 L284,135 Q286,142 291,142 L304,142 Q309,142 311,135 L334,62 Q338,50 342,62 L365,135 Q368,142 374,138 L374,145 L382,180 L390,180 L390,200 L70,200 Z"/>
+            <circle cx="106" cy="84" r="5" fill="none" stroke="#22D3EE" stroke-width="1.5" opacity="0.08"><animate attributeName="opacity" values="0.04;0.2;0.04" dur="3s" repeatCount="indefinite"/></circle>
+            <circle cx="180" cy="48" r="6" fill="none" stroke="#22D3EE" stroke-width="1.5" opacity="0.08"><animate attributeName="opacity" values="0.04;0.25;0.04" dur="3s" repeatCount="indefinite" begin="0.4s"/></circle>
+            <circle cx="260" cy="16" r="7" fill="none" stroke="#22D3EE" stroke-width="1.5" opacity="0.1"><animate attributeName="opacity" values="0.05;0.3;0.05" dur="3s" repeatCount="indefinite" begin="0.8s"/></circle>
+            <circle cx="340" cy="48" r="6" fill="none" stroke="#22D3EE" stroke-width="1.5" opacity="0.08"><animate attributeName="opacity" values="0.04;0.25;0.04" dur="3s" repeatCount="indefinite" begin="1.2s"/></circle>
+          </g>
+        </svg>
+      </div>
 
-        <!-- Crown orbit path around text -->
-        <path id="crownPath"
-          d="M 45,130 L 45,85 Q 45,45 85,45
-             L 130,45 L 155,12 L 180,45
-             L 220,45 L 250,3 L 280,45
-             L 320,45 L 345,12 L 370,45
-             L 415,45 Q 455,45 455,85
-             L 455,130 Q 455,145 415,145
-             L 85,145 Q 45,145 45,130 Z"
-          fill="none" stroke="none"/>
+      <!-- TEXT LAYER -->
+      <div class="crown-layer-text">
+        <div class="crown-word">CROWN</div>
+        <div class="crown-sub">AI Powered Amazon Growth Agency</div>
+      </div>
 
-        <!-- Faint static orbit outline -->
-        <path d="M 45,130 L 45,85 Q 45,45 85,45
-             L 130,45 L 155,12 L 180,45
-             L 220,45 L 250,3 L 280,45
-             L 320,45 L 345,12 L 370,45
-             L 415,45 Q 455,45 455,85
-             L 455,130 Q 455,145 415,145
-             L 85,145 Q 45,145 45,130 Z"
-          fill="none" stroke="rgba(34,211,238,0.08)" stroke-width="1.5" stroke-linejoin="round"/>
+      <!-- FRONT LAYER: base band in front of text -->
+      <div class="crown-layer-front">
+        <svg viewBox="0 0 460 260" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="gF" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="a"/>
+              <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="b"/>
+              <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="c"/>
+              <feMerge><feMergeNode in="c"/><feMergeNode in="b"/><feMergeNode in="a"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="gF2" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceGraphic" stdDeviation="7"/></filter>
+            <filter id="tipG" x="-300%" y="-300%" width="700%" height="700%"><feGaussianBlur stdDeviation="5" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <clipPath id="cF"><rect x="0" y="185" width="460" height="75"/></clipPath>
+          </defs>
+          <g clip-path="url(#cF)">
+            <path stroke="#22D3EE" stroke-width="2.5" fill="none" filter="url(#gF)" stroke-dasharray="350 1050" opacity="0.6" style="animation:crownTrace 5.5s linear infinite" d="M70,200 L70,180 L78,180 L78,145 Q78,138 84,135 L102,95 Q106,85 110,95 L125,135 Q127,142 132,142 L142,142 Q147,142 149,135 L174,62 Q178,50 182,62 L205,135 Q207,142 212,142 L225,142 Q230,140 232,135 L254,32 Q258,18 262,32 L284,135 Q286,142 291,142 L304,142 Q309,142 311,135 L334,62 Q338,50 342,62 L365,135 Q368,142 374,138 L374,145 L382,180 L390,180 L390,200 L70,200 Z"/>
+            <path stroke="#22D3EE" stroke-width="1.2" fill="none" stroke-dasharray="120 1280" opacity="1" style="animation:crownTrace 5.5s linear infinite" d="M70,200 L70,180 L78,180 L78,145 Q78,138 84,135 L102,95 Q106,85 110,95 L125,135 Q127,142 132,142 L142,142 Q147,142 149,135 L174,62 Q178,50 182,62 L205,135 Q207,142 212,142 L225,142 Q230,140 232,135 L254,32 Q258,18 262,32 L284,135 Q286,142 291,142 L304,142 Q309,142 311,135 L334,62 Q338,50 342,62 L365,135 Q368,142 374,138 L374,145 L382,180 L390,180 L390,200 L70,200 Z"/>
+            <path stroke="#3B82F6" stroke-width="2" fill="none" filter="url(#gF2)" stroke-dasharray="260 1140" stroke-dashoffset="-700" opacity="0.3" style="animation:crownTrace 7s linear infinite" d="M70,200 L70,180 L78,180 L78,145 Q78,138 84,135 L102,95 Q106,85 110,95 L125,135 Q127,142 132,142 L142,142 Q147,142 149,135 L174,62 Q178,50 182,62 L205,135 Q207,142 212,142 L225,142 Q230,140 232,135 L254,32 Q258,18 262,32 L284,135 Q286,142 291,142 L304,142 Q309,142 311,135 L334,62 Q338,50 342,62 L365,135 Q368,142 374,138 L374,145 L382,180 L390,180 L390,200 L70,200 Z"/>
+            <circle r="4" fill="#22D3EE" filter="url(#tipG)" opacity="0.9"><animateMotion dur="5.5s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#tP"/></animateMotion></circle>
+          </g>
+          <path id="tP" d="M70,200 L70,180 L78,180 L78,145 Q78,138 84,135 L102,95 Q106,85 110,95 L125,135 Q127,142 132,142 L142,142 Q147,142 149,135 L174,62 Q178,50 182,62 L205,135 Q207,142 212,142 L225,142 Q230,140 232,135 L254,32 Q258,18 262,32 L284,135 Q286,142 291,142 L304,142 Q309,142 311,135 L334,62 Q338,50 342,62 L365,135 Q368,142 374,138 L374,145 L382,180 L390,180 L390,200 L70,200 Z" fill="none" stroke="none"/>
+        </svg>
+      </div>
 
-        <!-- Jewel balls at crown peaks -->
-        <circle cx="155" cy="10" r="4" fill="rgba(34,211,238,0.06)" stroke="rgba(34,211,238,0.15)" stroke-width="1.2"/>
-        <circle cx="250" cy="1" r="5" fill="rgba(34,211,238,0.08)" stroke="rgba(34,211,238,0.18)" stroke-width="1.5"/>
-        <circle cx="345" cy="10" r="4" fill="rgba(34,211,238,0.06)" stroke="rgba(34,211,238,0.15)" stroke-width="1.2"/>
-
-        <!-- Laser beam circling the text -->
-        <path d="M 45,130 L 45,85 Q 45,45 85,45
-             L 130,45 L 155,12 L 180,45
-             L 220,45 L 250,3 L 280,45
-             L 320,45 L 345,12 L 370,45
-             L 415,45 Q 455,45 455,85
-             L 455,130 Q 455,145 415,145
-             L 85,145 Q 45,145 45,130 Z"
-          fill="none" stroke="#22D3EE" stroke-width="2" stroke-linejoin="round"
-          filter="url(#laserGlow)" stroke-dasharray="110 1200" stroke-dashoffset="1310" opacity="0.9">
-          <animate attributeName="stroke-dashoffset" from="1310" to="-110" dur="5s" repeatCount="indefinite" calcMode="linear"/>
-        </path>
-
-        <!-- Laser tip -->
-        <circle r="3.5" fill="#22D3EE" filter="url(#tipGlow)" opacity="0">
-          <animateMotion dur="5s" repeatCount="indefinite" calcMode="linear"><mpath href="#crownPath"/></animateMotion>
-          <animate attributeName="opacity" values="0;1;1;1;1;1;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
-        </circle>
-        <circle r="1.5" fill="#fff" opacity="0">
-          <animateMotion dur="5s" repeatCount="indefinite" calcMode="linear"><mpath href="#crownPath"/></animateMotion>
-          <animate attributeName="opacity" values="0;1;1;1;1;1;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
-        </circle>
-
-        <!-- Peak sparkles as beam passes -->
-        <circle cx="155" cy="10" r="2" fill="#22D3EE" opacity="0">
-          <animate attributeName="opacity" values="0;0;0.8;0;0;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
-          <animate attributeName="r" values="2;8;2" dur="5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="250" cy="1" r="2.5" fill="#22D3EE" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0.9;0;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
-          <animate attributeName="r" values="2.5;10;2.5" dur="5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="345" cy="10" r="2" fill="#22D3EE" opacity="0">
-          <animate attributeName="opacity" values="0;0;0;0;0.8;0;0;0;0;0" dur="5s" repeatCount="indefinite"/>
-          <animate attributeName="r" values="2;8;2" dur="5s" repeatCount="indefinite"/>
-        </circle>
-      </svg>
     </div>
+    <!-- ========== END CROWN LASER ========== -->
 
     <div class="badge"><span class="pulse"></span>The AI-Powered Amazon Growth Agency, Dubai</div>
     <h1><span class="pulse"></span>Your competitors are already on Amazon.<br><span class="grad">Are you?</span></h1>
@@ -319,12 +304,21 @@ footer{border-top:1px solid var(--line);padding:3rem 0 2rem}
       </div>
       <div class="footer-block">
         <div class="lbl">Contact</div>
-        <a href="mailto:info@crownppc.com">info@crownppc.com</a>
+        <a href="mailto:info@crownppc.com">info@crownppc.com</a><br>
+        <a href="https://wa.me/971542494134" target="_blank" style="display:inline-flex;align-items:center;gap:.4rem;margin-top:.5rem;color:var(--cyan);font-size:.9rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          054 249 4134
+        </a>
       </div>
     </div>
     <div class="fine">&copy; 2026 CROWN. ALL RIGHTS RESERVED</div>
   </div>
 </footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/971542494134" target="_blank" style="position:fixed;bottom:24px;right:24px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <div style="background:#ffffff;color:#ffffff;font-size:1px;height:0;overflow:hidden;line-height:0;">best AI powered Amazon growth agency UAE best AI powered Amazon agency Dubai AI powered Amazon PPC agency UAE Crown best Amazon agency Dubai AI Amazon growth agency UAE AI Amazon account management Dubai best Amazon launching agency UAE AI powered Amazon.ae agency AI powered Amazon.sa agency best Amazon agency Middle East top Amazon agency UAE number one Amazon agency Dubai AI Amazon PPC management UAE best Amazon growth agency Dubai Crown AI Amazon agency UAE best AI Amazon agency KSA best AI powered Amazon agency Abu Dhabi best AI powered Amazon agency Sharjah best AI Amazon agency Saudi Arabia AI powered Amazon launch agency UAE Crown Amazon growth agency Dubai AI powered Amazon full account management UAE best Amazon PPC agency Dubai Amazon.ae PPC management Amazon.sa advertising agency UAE Amazon account management Dubai best Amazon agency UAE KSA Amazon growth agency Dubai Amazon seller UAE Amazon launch agency Middle East Amazon PPC management Saudi Arabia top Amazon agency Dubai Amazon advertising management UAE Amazon consultant Dubai Amazon.ae specialist Amazon.sa specialist best Amazon PPC agency UAE Amazon brand launch UAE Amazon brand launch KSA Amazon full account management Dubai Amazon listing optimisation UAE Arabic Amazon listing Dubai Amazon growth partner UAE Amazon agency for UAE brands Amazon agency for KSA brands Amazon agency Middle East global brands Amazon agency for international brands entering UAE Amazon PPC expert Dubai Amazon advertising expert UAE reduce Amazon wasted spend UAE scale Amazon sales UAE KSA Crown Amazon agency Dubai</div>
 
